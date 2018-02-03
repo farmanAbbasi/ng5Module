@@ -1,12 +1,4 @@
-.example-icon {
-    padding: 0 14px;
-  }
-  
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-
-  .example-card {
+.example-card {
     width: 500px;
   }
   .didi{
@@ -17,22 +9,5 @@
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
- 
-
-  /*pagination step 2*/
-  /*.search-results {
-
-    height: 500px;
-
-    overflow: auto;
-
-  }*/
 
   
-
-
-
-
-
-
-

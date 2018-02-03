@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
-import{HttpClientModule} from '@angular/common/http';//
+import{HttpClientModule} from '@angular/common/http';
+import { CardsComponent } from './cards/cards.component';//
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardsComponent
     
   ],
   imports: [

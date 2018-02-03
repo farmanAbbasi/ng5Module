@@ -9,7 +9,7 @@
       <span>MyMaterial</span>
   
       <span class="example-spacer"></span>
-      
+      <button mat-button routerLink="cards">Cards</button>
       <button mat-button>About</button>
       <button mat-button>Services</button>
       <button mat-button>Contact</button>
@@ -19,43 +19,26 @@
   <br>
 
   
-  <!--for card......................................................-->
-  <div align="center">
-  <mat-card class="example-card">
-    <mat-card-header>
-    <mat-card-title>
-      Notifications of the day
-    </mat-card-title>
-    <mat-card-subtitle>
-        Today is a heavy day.
-      </mat-card-subtitle>
-    </mat-card-header></mat-card>
-  
-<br>
 
-<div *ngFor="let z of dog">
-  <div *ngFor="let t of dataContent ; let i = index">
-     
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{z.name}}</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-     <div *ngIf="found"><span>
-        {{i+1}} {{t}} 
-     </span></div>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button >LIKE</button>
-    <button mat-button  >SHARE</button>
-  </mat-card-actions>
-</mat-card>
-</div>
-</div>
-<br>
+  <!--pagination step 1.........................................-
+  <div class="search-results" *ngFor="let item of itemsToShow"
+
+    infiniteScroll
+
+    [infiniteScrollDistance]="2"
+
+    [infiniteScrollThrottle]="50"
+
+    (scrolled)="onScroll()"
+
+    [infiniteScrollDisabled]="isFullListDisplayed"
+
+    [scrollWindow]="false">
+    <p><span>{{item}}</span></p>
+  </div>
+-->
+  <!--for card......................................................-->
+
  <router-outlet></router-outlet>
 
 
