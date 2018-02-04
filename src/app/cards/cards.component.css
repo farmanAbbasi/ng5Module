@@ -1,13 +1,22 @@
 .example-card {
     width: 500px;
+    margin-bottom:20px;
+    
   }
-  .didi{
-    background-color: #0ba4be;
-  }
+  
   
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
 
-  
+ div{
+  background-color: blanchedalmond;
+ } 
+  .search-results {
+
+    height: 500px;
+
+    overflow: auto;
+
+  }
