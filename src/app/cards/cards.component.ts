@@ -1,6 +1,9 @@
 import { Component} from '@angular/core';
 import{HttpClient}from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { DataService } from '../data.service';
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+
 
 
 @Component({
@@ -8,21 +11,24 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent {
+export class CardsComponent implements OnInit{
   dataContent=[];
-  nameContent=[];
   found:boolean;
   //found2:boolean;
   id:number=1;
   i:number;
 
   
-  constructor (private httpClient:HttpClient)
+  constructor (private httpClient:HttpClient )//step 9 : private _dataService:DataService
   {
     this.getProfile();
-   
-    //this.getName();
   } 
+
+  ngOnInit()//step  10 inside this do all
+  {
+   // this._dataService.getData()//this method returnsobsrevable so have to subscribe
+   // .subscribe(resData=>this.dog=resData);//step 10 complete
+  }
   getProfile()
   {
    console.log(this.id);
@@ -45,7 +51,8 @@ export class CardsComponent {
      }
    )
   }
-  dog=[
+  
+   dog=[
     
     {
       "name": "dog1",
@@ -207,7 +214,8 @@ export class CardsComponent {
     }
 
   ];
-  private noOfItemsToShowInitially: number = 10;
+  
+  private noOfItemsToShowInitially: number = 1;
 
   private itemsToLoad: number = 5;
 
@@ -232,55 +240,8 @@ export class CardsComponent {
     }
 
   }
- 
   
-  
-  //pagiantion step 3
-  /* private noOfItemsToShowInitially: number = 10;
-  private itemsToLoad: number = 5;
 
-  public itemsToShow = this.dataContent.slice(0, this.noOfItemsToShowInitially);
-  public isFullListDisplayed: boolean = false;
-  onScroll() {
-
-    if (this.noOfItemsToShowInitially <= this.dataContent.length) {
-
-      this.noOfItemsToShowInitially += this.itemsToLoad;
-
-      this.itemsToShow = this.dataContent.slice(0, this.noOfItemsToShowInitially);
-
-      console.log("scrolled");
-
-    } else {
-
-      this.isFullListDisplayed = true;
-
-    }
-
-  }
-*/ 
-  /*getName()
-  {
-   console.log(this.id);
-   this.httpClient.get(`../assets/farman.json`)//note `` not ''
-   .subscribe(
-     (dataName:any[])=>{
-      
-      if(dataName.length)
-      {
-       
-       for(this.i=0;this.i<dataName.length;this.i++)
-       {
-         this.nameContent[this.i]=dataName[this.i].name;//last wala name json se hai
-         this.found2=true;
-         
-       }
-        
-      }
-     }
-   )
-  }*/
-  ////////////////////////////////////////////////////////////////////////////////////
   
 }
 

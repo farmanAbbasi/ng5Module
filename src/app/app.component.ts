@@ -8,7 +8,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';//step 3
 })
 
 export class AppComponent {
-  title = 'app';
+  title = 'Notifications Panel';
    constructor() { }
 
 }

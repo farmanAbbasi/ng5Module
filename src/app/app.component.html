@@ -1,20 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ title }}
   </h1></div>
  
   <mat-toolbar class ="didi" >
     <mat-toolbar-row>
-      <span>MyMaterial</span>
-  
+      <span>TEKsystems</span>
       <span class="example-spacer"></span>
+      <button mat-button><a href="">Home</a></button> 
       <button mat-button routerLink="cards">Cards</button>
       <button mat-button>About</button>
       <button mat-button>Services</button>
       <button mat-button>Contact</button>
     </mat-toolbar-row>
   </mat-toolbar>
+  <router-outlet></router-outlet>
   <br>
  
   
@@ -41,6 +43,7 @@
 -->
   <!--for card......................................................-->
 
- <router-outlet></router-outlet>
+
+
 
 
