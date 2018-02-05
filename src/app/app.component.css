@@ -12,6 +12,10 @@
   .didi{
     background-color: rgb(245, 206, 148)
   }
+  .heading{
+    background-color: rgb(245, 174, 67);
+    padding:10px;
+  }
   a{
     text-decoration: none;
     color: black;
