@@ -1,7 +1,4 @@
 
-
- 
-<!--step 6    -->
 <div class="search-results"  
      infiniteScroll
 
@@ -22,30 +19,24 @@
           Notifications of the day :
         </mat-card-title>
         <mat-card-subtitle>
-            Its a suuny day.
+            Its a sunny day.
           </mat-card-subtitle>
         </mat-card-header></mat-card>
-    
-<!--
-<p style="text-align: right; margin-right: 50px; margin-bottom: 1rem;" *ngFor="let item of itemsToShow">
-
- {{item.name}}
- </p>-->
+  
 
 <br>
 
 <div *ngFor="let t of itemsToShow ; let i = index">
-     
   <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{t.name}}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-subtitle>{{t.desc}} {{i+1}} </mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
        <div *ngIf="found"><span>
-          {{i+1}} {{t.desc}}
+          {{i+1}} {{dataContent[i]}}
        </span></div>
     </mat-card-content>
     <mat-card-actions>
@@ -55,10 +46,7 @@
   </mat-card>
   </div>
   </div>
-  
 	</div>
-
-   
 
   
 

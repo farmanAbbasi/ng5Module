@@ -14,6 +14,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MaterialModule,
     HttpClientModule,
     InfiniteScrollModule,
-    HttpModule//step 2
+   
 
   ],
   providers: [],

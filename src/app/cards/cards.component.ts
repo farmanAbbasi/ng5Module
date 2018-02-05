@@ -1,9 +1,7 @@
 import { Component} from '@angular/core';
 import{HttpClient}from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { DataService } from '../data.service';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-
 
 
 @Component({
@@ -14,20 +12,18 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class CardsComponent implements OnInit{
   dataContent=[];
   found:boolean;
-  //found2:boolean;
   id:number=1;
   i:number;
 
   
-  constructor (private httpClient:HttpClient)//step 9 : private _dataService:DataService
+  constructor (private httpClient:HttpClient)//
   {
     this.getProfile();
   } 
 
-  ngOnInit()//step  10 inside this do all
+  ngOnInit()
   {
-    //this._dataService.getData()//this method returnsobsrevable so have to subscribe
-    // .subscribe(resData=>this.dog=resData);//step 10 complete
+    
   }
   getProfile()
   {
@@ -42,7 +38,7 @@ export class CardsComponent implements OnInit{
        // this.found=true;
        for(this.i=0;this.i<data.length;this.i++)
        {
-         this.dataContent[this.i]=data[this.i].title;
+         this.dataContent[this.i]=data[this.i].body;//jsonholder se body ka content le rahe hai
          this.found=true;
          
        }
@@ -52,7 +48,7 @@ export class CardsComponent implements OnInit{
    )
   }
   
-   dog=[
+  dog=[
     
     {
       "name": "dog1",
@@ -214,6 +210,7 @@ export class CardsComponent implements OnInit{
     }
 
   ];
+  
   
   private noOfItemsToShowInitially: number = 1;
 
