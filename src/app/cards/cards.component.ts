@@ -19,15 +19,15 @@ export class CardsComponent implements OnInit{
   i:number;
 
   
-  constructor (private httpClient:HttpClient )//step 9 : private _dataService:DataService
+  constructor (private httpClient:HttpClient)//step 9 : private _dataService:DataService
   {
     this.getProfile();
   } 
 
   ngOnInit()//step  10 inside this do all
   {
-   // this._dataService.getData()//this method returnsobsrevable so have to subscribe
-   // .subscribe(resData=>this.dog=resData);//step 10 complete
+    //this._dataService.getData()//this method returnsobsrevable so have to subscribe
+    // .subscribe(resData=>this.dog=resData);//step 10 complete
   }
   getProfile()
   {

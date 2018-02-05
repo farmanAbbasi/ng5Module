@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import{HttpClientModule} from '@angular/common/http';
+import {HttpModule} from "@angular/http";//step 1
 import { CardsComponent } from './cards/cards.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
@@ -25,7 +26,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    HttpModule//step 2
 
   ],
   providers: [],
