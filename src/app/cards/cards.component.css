@@ -1,21 +1,30 @@
 .example-card {
-    width: 500px;
-    margin-bottom:20px;
-    
-  }
+  width: 500px;
+  margin-bottom:20px;
+  border: #fff double 10px;
   
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+}
 
- div{
-  background-color: blanchedalmond;
- } 
-  .search-results {
+.example-header-image {
+  background-image: url('http://www.iconhot.com/icon/png/glossy/512/user-male-3.png');
+  background-size: cover;
+}/*https://material.angular.io/assets/img/examples/shiba1.jpg*/
 
-    height: 500px;
+div{
+background-color: blanchedalmond;
+} 
+.bodyText{
+  padding:10px;
+}
 
-    overflow: auto;
+.search-results {
+  height: 500px;
+  overflow: auto;
+}
+.example-form-field {
+  width: 200px;
+}
 
-  }
+.your-thoughts{
+  width:500px;
+}

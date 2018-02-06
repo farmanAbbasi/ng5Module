@@ -2,7 +2,7 @@
 <div class="search-results"  
      infiniteScroll
 
-    [infiniteScrollDistance]="2"
+    [infiniteScrollDistance]="3"
 
     [infiniteScrollThrottle]="50"
 
@@ -13,7 +13,7 @@
     [scrollWindow]="false">
     <br><br>
     <div align="center">
-      <mat-card class="example-card">
+      /<!--<mat-card class="example-card">
         <mat-card-header>
         <mat-card-title>
           Notifications of the day :
@@ -22,26 +22,43 @@
             Its a sunny day.
           </mat-card-subtitle>
         </mat-card-header></mat-card>
-  
-
+      -->
 <br>
 
-<div *ngFor="let t of itemsToShow ; let i = index">
+
+
+
+<mat-card class="example-card">
+  <mat-form-field class="your-thoughts">
+  <textarea (keyup)="onThoughtKeyUp($event)" matInput placeholder ="Your thoughts :" [value]=thought matTextareaAutosize matAutosizeMinRows="2"
+            matAutosizeMaxRows="2"></textarea>
+</mat-form-field>
+<mat-card-actions>
+    <button mat-button (click)="deleteThought()" >DELETE</button>
+    <button mat-button  >SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
+<div *ngFor="let t of itemsToShow; let i = index">
   <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{t.name}}</mat-card-title>
       <mat-card-subtitle>{{t.desc}} {{i+1}} </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <!--https://material.angular.io/assets/img/examples/shiba2.jpg-->
+    <img mat-card-image src="https://www.teksystems.com/-/media/FPO-image-750x350-logo.png" alt="Photo of a Shiba Inu">
     <mat-card-content>
-       <div *ngIf="found"><span>
+       <div class ="bodyText" *ngIf="found"><span>
           {{i+1}} {{dataContent[i]}}
        </span></div>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button >LIKE</button>
-      <button mat-button  >SHARE</button>
+    
+       <mat-card-actions>    
+      <button mat-button  matTooltip="Like!">LIKE</button>
+      <button mat-button  matTooltip="Share!"  >SHARE</button>
     </mat-card-actions>
   </mat-card>
   </div>

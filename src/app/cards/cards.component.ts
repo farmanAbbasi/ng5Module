@@ -2,28 +2,43 @@ import { Component} from '@angular/core';
 import{HttpClient}from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { DataService } from '../data.service';
 
-
+//import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit{
+
+  thought="";
   dataContent=[];
   found:boolean;
   id:number=1;
   i:number;
+  value = 'Clear me';
 
-  
-  constructor (private httpClient:HttpClient)//
+  constructor (private httpClient:HttpClient)//,private dataService : DataService
   {
     this.getProfile();
   } 
 
   ngOnInit()
   {
-    
+    //this.dataService.getData()
+   // .subscribe((res :any)=>{
+    //  this.dog=res.dogs;
+   // });
+  }
+
+  deleteThought()
+  {
+   this.thought="";
+  }
+  onThoughtKeyUp(event :any)
+  {
+    this.thought=event.target.value;
   }
   getProfile()
   {
@@ -51,167 +66,169 @@ export class CardsComponent implements OnInit{
   dog=[
     
     {
-      "name": "dog1",
-      "desc":"good dog "
+      "name": "Person1",
+      "desc":"good Person "
     },
     {
-      "name": "dog2",
-      "desc":"good dog "
+      "name": "Person2",
+      "desc":"good Person "
     },
     {
-      "name": "dog3",
-      "desc":"good dog "
+      "name": "Person3",
+      "desc":"good Person "
     },
     {
-      "name": "dog4",
-      "desc":"good dog "
+      "name": "Person4",
+      "desc":"good Person "
     },
     {
-      "name": "dog5",
-      "desc":"good dog "
+      "name": "Person5",
+      "desc":"good Person "
     },
     {
-      "name": "dog6",
-      "desc":"good dog "
+      "name": "Person6",
+      "desc":"goodPerson "
     },
     {
-      "name": "dog7",
-      "desc":"good dog "
+      "name": "Person7",
+      "desc":"good Person "
     },
     {
-      "name": "dog8",
-      "desc":"good dog "
+      "name": "Person8",
+      "desc":"good Person "
     },
     {
-      "name": "dog9",
-      "desc":"good dog "
+      "name": "Person9",
+      "desc":"good Person "
     },
     {
-      "name": "dog10",
-      "desc":"good dog "
+      "name": "Person10",
+      "desc":"good Person "
     },
     {
-      "name": "dog11",
-      "desc":"good dog "
+      "name": "Person11",
+      "desc":"good Person "
     },
     {
-      "name": "dog12",
-      "desc":"good dog "
+      "name": "Person12",
+      "desc":"good Person "
     },
     {
-      "name": "dog13",
-      "desc":"good dog "
+      "name": "Person13",
+      "desc":"good Person "
     },
     {
-      "name": "dog14",
-      "desc":"good dog "
+      "name": "Person14",
+      "desc":"good Person"
     },
     {
-      "name": "dog15",
-      "desc":"good dog "
+      "name": "Person15",
+      "desc":"good Person"
     },
     {
-      "name": "dog16",
-      "desc":"good dog "
+      "name": "Person16",
+      "desc":"good Person "
     },
     {
-      "name": "dog17",
-      "desc":"good dog "
+      "name": "Person17",
+      "desc":"good Person"},
+    {
+      "name": "Person18",
+      "desc":"good Person"
     },
     {
-      "name": "dog18",
-      "desc":"good dog "
+      "name": "Person19",
+      "desc":"good Person"
     },
     {
-      "name": "dog19",
-      "desc":"good dog "
+      "name": "Person20",
+      "desc":"good Person"
     },
     {
-      "name": "dog20",
-      "desc":"good dog "
-    },  {
-      "name": "dog21",
-      "desc":"good dog "
+      "name": "Person21",
+      "desc":"good Person "
     },
     {
-      "name": "dog22",
-      "desc":"good dog "
+      "name": "Person22",
+      "desc":"good Person "
     },
     {
-      "name": "dog23",
-      "desc":"good dog "
+      "name": "Person23",
+      "desc":"good Person "
     },
     {
-      "name": "dog24",
-      "desc":"good dog "
+      "name": "Person24",
+      "desc":"good Person "
     },
     {
-      "name": "dog25",
-      "desc":"good dog "
+      "name": "Person25",
+      "desc":"good Person "
     },
     {
-      "name": "dog26",
-      "desc":"good dog "
+      "name": "Person26",
+      "desc":"goodPerson "
     },
     {
-      "name": "dog27",
-      "desc":"good dog "
+      "name": "Person27",
+      "desc":"good Person "
     },
     {
-      "name": "dog28",
-      "desc":"good dog "
+      "name": "Person28",
+      "desc":"good Person "
     },
     {
-      "name": "dog29",
-      "desc":"good dog "
+      "name": "Person29",
+      "desc":"good Person "
     },
     {
-      "name": "dog30",
-      "desc":"good dog "},
-    {
-      "name": "dog31",
-      "desc":"good dog "
+      "name": "Person30",
+      "desc":"good Person "
     },
     {
-      "name": "dog32",
-      "desc":"good dog "
+      "name": "Person31",
+      "desc":"good Person "
     },
     {
-      "name": "dog33",
-      "desc":"good dog "
+      "name": "Person32",
+      "desc":"good Person "
     },
     {
-      "name": "dog34",
-      "desc":"good dog "
+      "name": "Person33",
+      "desc":"good Person "
     },
     {
-      "name": "dog35",
-      "desc":"good dog "
+      "name": "Person34",
+      "desc":"good Person"
     },
     {
-      "name": "dog36",
-      "desc":"good dog "
+      "name": "Person35",
+      "desc":"good Person"
     },
     {
-      "name": "dog37",
-      "desc":"good dog "
+      "name": "Person36",
+      "desc":"good Person "
     },
     {
-      "name": "dog38",
-      "desc":"good dog "
+      "name": "Person37",
+      "desc":"good Person"},
+    {
+      "name": "Person38",
+      "desc":"good Person"
     },
     {
-      "name": "dog39",
-      "desc":"good dog "
+      "name": "Person39",
+      "desc":"good Person"
     },
     {
-      "name": "dog40",
-      "desc":"good dog "
+      "name": "Person40",
+      "desc":"good Person"
     }
+
 
   ];
   
   
+ 
   private noOfItemsToShowInitially: number = 1;
 
   private itemsToLoad: number = 5;

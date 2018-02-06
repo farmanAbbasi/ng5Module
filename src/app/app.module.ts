@@ -4,13 +4,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 
-
+import {MatInputModule} from '@angular/material/input';//for the input
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import{HttpClientModule} from '@angular/common/http';
-import {HttpModule} from "@angular/http";//step 1
+
 import { CardsComponent } from './cards/cards.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { DataService } from './data.service';
 
 
 
@@ -27,11 +28,10 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    InfiniteScrollModule,
-   
-
+    InfiniteScrollModule
+  
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
