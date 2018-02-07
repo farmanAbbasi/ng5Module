@@ -13,13 +13,14 @@ import { exit } from 'process';
 export class CardsComponent implements OnInit{
 
   thought="";
-  thoughtToShare="";
+  thoughtToShare=[];
   dataContent=[];
   found:boolean;
   toShare=false;
-  shared=false;
+  shared=true;
   id:number=1;
   i:number;
+  j:number=0;
   value = 'Clear me';
 
   constructor (private httpClient:HttpClient)//,private dataService : DataService
@@ -37,11 +38,11 @@ export class CardsComponent implements OnInit{
   deleteThought()
   {
       this.thought="";
-      this.shared=true;
+     // this.shared=true;
   
   }
   
-  
+ 
   onThoughtKeyUp(event :any)
   {
     this.thought=event.target.value;
@@ -53,15 +54,14 @@ export class CardsComponent implements OnInit{
         this.toShare=true;
         if(this.toShare==true)
         {
-          this.thoughtToShare=this.thought;
+          this.thoughtToShare[this.j]=this.thought;
+          this.j=this.j+1;
          this.toShare=true;
         }
         
       }
      
   }
-
-
   getProfile()
   {
    console.log(this.id);

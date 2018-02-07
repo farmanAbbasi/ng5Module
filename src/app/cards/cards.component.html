@@ -12,8 +12,8 @@
 
     [scrollWindow]="false">
     <br><br>
-    <div align="center">
-      /<!--<mat-card class="example-card">
+    
+      <!--<mat-card class="example-card">
         <mat-card-header>
         <mat-card-title>
           Notifications of the day :
@@ -23,29 +23,35 @@
           </mat-card-subtitle>
         </mat-card-header></mat-card>
       -->
-<br>
 
+<div align="center">
 <mat-card class="example-card">
   <mat-form-field class="your-thoughts">
-  <textarea (keyup)="onThoughtKeyUp($event)" matInput placeholder ="Your thoughts :" [value]=thought matTextareaAutosize matAutosizeMinRows="2"
-            matAutosizeMaxRows="2"></textarea>
+  <textarea (keyup)="onThoughtKeyUp($event)" matInput placeholder ="Your thoughts :" [(ngModel)]="thought" matTextareaAutosize matAutosizeMinRows="2"
+            matAutosizeMaxRows="2"></textarea>        
 </mat-form-field>
 <mat-card-actions>
-    <button mat-button (click)="deleteThought()" >DELETE</button>
-    <button mat-button (click)="shareThought()" >SHARE</button>
+   <button mat-button (click)="deleteThought()" class="buttons" >CLEAR</button>
+    <button mat-button (click)="shareThought()" class="buttons" >POST</button>
+  
   </mat-card-actions>
 </mat-card>
 
-<div *ngIf="toShare"> 
-    <mat-card class="example-card">
+<div *ngFor="let t of thoughtToShare.reverse()" > 
+    <mat-card class="example-card-content">
   <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title><span *ngIf="toShare">{{thoughtToShare}}</span>
-    </mat-card-title>
-  </mat-card-header>
+    <mat-card-title>Mohammad Farman Abbasi</mat-card-title>
+      <mat-card-subtitle>TEKsystems </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://www.teksystems.com/-/media/FPO-image-750x350-logo.png" alt="Photo of a TEKsystems">
+        <mat-card-content>
+            <span *ngIf="toShare">{{t}}</span>
+            <button mat-button class="delete-post">like</button>
+            <button mat-button class="delete-post">comment</button>
+      </mat-card-content>
 </mat-card>
 </div>
-
 <!--
 <div *ngFor="let t of itemsToShow; let i = index">
     <mat-card class="example-card">
@@ -54,8 +60,8 @@
       <mat-card-title>{{t.name}}</mat-card-title>
       <mat-card-subtitle>{{t.desc}} {{i+1}} </mat-card-subtitle>
     </mat-card-header>
-    https://material.angular.io/assets/img/examples/shiba2.jpg-->
-   <!-- <img mat-card-image src="https://www.teksystems.com/-/media/FPO-image-750x350-logo.png" alt="Photo of a Shiba Inu">
+   
+    <img mat-card-image src="https://www.teksystems.com/-/media/FPO-image-750x350-logo.png" alt="Photo of a TEKsystems">
     <mat-card-content>
        <div class ="bodyText" *ngIf="found"><span>
           {{i+1}} {{dataContent[i]}}
@@ -67,8 +73,8 @@
     </mat-card-actions>
   </mat-card>
 
-  </div>
--->
+  </div>-->
+
   </div>
   </div>
   
