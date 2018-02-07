@@ -3,8 +3,8 @@ import{HttpClient}from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { DataService } from '../data.service';
+import { exit } from 'process';
 
-//import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -13,8 +13,11 @@ import { DataService } from '../data.service';
 export class CardsComponent implements OnInit{
 
   thought="";
+  thoughtToShare="";
   dataContent=[];
   found:boolean;
+  toShare=false;
+  shared=false;
   id:number=1;
   i:number;
   value = 'Clear me';
@@ -31,15 +34,34 @@ export class CardsComponent implements OnInit{
     //  this.dog=res.dogs;
    // });
   }
-
   deleteThought()
   {
-   this.thought="";
+      this.thought="";
+      this.shared=true;
+  
   }
+  
+  
   onThoughtKeyUp(event :any)
   {
     this.thought=event.target.value;
   }
+  shareThought()
+  { 
+      if(this.shared==true &&this.thought.length!=0)
+      {
+        this.toShare=true;
+        if(this.toShare==true)
+        {
+          this.thoughtToShare=this.thought;
+         this.toShare=true;
+        }
+        
+      }
+     
+  }
+
+
   getProfile()
   {
    console.log(this.id);
@@ -224,11 +246,7 @@ export class CardsComponent implements OnInit{
       "desc":"good Person"
     }
 
-
   ];
-  
-  
- 
   private noOfItemsToShowInitially: number = 1;
 
   private itemsToLoad: number = 5;
