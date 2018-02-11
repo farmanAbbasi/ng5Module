@@ -8,13 +8,12 @@ import {MatInputModule} from '@angular/material/input';//for the input
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import{HttpClientModule} from '@angular/common/http';
-import{FormsModule} from '@angular/forms';
+import{FormsModule} from '@angular/forms';//for ngModel
+
 
 import { CardsComponent } from './cards/cards.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { DataService } from './data.service';
-
-
 
 
 @NgModule({
@@ -29,7 +28,8 @@ import { DataService } from './data.service';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    InfiniteScrollModule,FormsModule
+    InfiniteScrollModule,
+    FormsModule
   
   ],
   providers: [DataService],

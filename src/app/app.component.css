@@ -4,13 +4,17 @@
   
   .example-spacer {
     flex: 1 1 auto;
+    display: flex;
+    
   }
 
   .example-card {
     width: 500px;
   }
   .didi{
-    background-color: rgb(245, 206, 148)
+    background-color: rgb(245, 206, 148);
+    display: flex;
+  
   }
   .heading{
     background-color: rgb(245, 174, 67);

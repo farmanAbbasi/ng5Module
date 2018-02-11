@@ -1,22 +1,33 @@
 .example-card {
-  width: 500px;
+  width: auto;
+  max-width: 500px;
   margin-bottom:20px;
   border: #fff double 10px;
- 
-  
 }
+.example-card-for-comments {
+  
+  max-width: 100px;
+  margin-bottom:20px;
+  border: #fff double 10px;
+}
+
+
 .example-card-content {
   text-align: left;
-  width: 500px;
+  width:auto;
+  max-width: 500px;
+
   margin-bottom:20px;
   border: #fff double 10px;
+  
   
 }
 
-.delete-post
+.post
 {
   float: right;
-  color: blue
+  color: blue;
+  
 }
 
 .example-header-image {

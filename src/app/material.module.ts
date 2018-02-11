@@ -6,10 +6,12 @@ import { MatToolbarModule } from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import {MatInputModule} from '@angular/material/input';
+import {MatExpansionModule} from '@angular/material/expansion';// step 1 expansion
+
 
 
 @NgModule({
-  imports: [MatButtonModule,MatToolbarModule,MatCardModule,MatInputModule],
-  exports: [MatButtonModule,MatToolbarModule,MatCardModule,MatInputModule],
+  imports: [MatButtonModule,MatToolbarModule,MatCardModule,MatInputModule,MatExpansionModule],
+  exports: [MatButtonModule,MatToolbarModule,MatCardModule,MatInputModule,MatExpansionModule],
 })
 export class MaterialModule { }

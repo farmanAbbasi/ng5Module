@@ -11,17 +11,27 @@ import { exit } from 'process';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit{
-
+  panelOpenState: boolean = false;//step 3 expansion
+  alreadyLiked: boolean=false;
+  toCommentValue: boolean=false;
   thought="";
   thoughtToShare=[];
+  likeButton:string="likes";
+  postButton:string="click to add comment";
+  
   dataContent=[];
   found:boolean;
   toShare=false;
   shared=true;
   id:number=1;
   i:number;
+  likesCount:number=0;
   j:number=0;
+  jj:number=0;
+  commentLength:number=0;
   value = 'Clear me';
+  commentCount:number=0;
+  text:string;
 
   constructor (private httpClient:HttpClient)//,private dataService : DataService
   {
@@ -41,8 +51,48 @@ export class CardsComponent implements OnInit{
      // this.shared=true;
   
   }
-  
- 
+  addLikes()
+  { 
+    if(this.alreadyLiked==false)
+    {
+      this.likesCount=this.likesCount+1;
+      this.alreadyLiked=true;
+      this.jj=this.jj+1;
+    }
+    else{
+      this.likesCount=this.likesCount-1;
+      this.alreadyLiked=false;
+    }
+  }
+  toComment()
+    { 
+      this.toCommentValue=true;
+    }
+    onCommentKeyUp(event :any)
+    {
+      this.text=event.target.value;
+      this.commentLength=this.text.length;
+      this.postButton="Post";
+    }
+     postComment()
+      { 
+        if(this.commentLength==0)
+        {
+          alert('zero length comment');
+        }
+        if(this.commentLength!=0)
+        {
+        
+        this.commentCount++;
+        this.commentLength=0;
+        this.postButton="click to add comment"; 
+        this.toCommentValue=false;
+        }
+     
+        
+        
+    }
+    
   onThoughtKeyUp(event :any)
   {
     this.thought=event.target.value;
@@ -56,7 +106,8 @@ export class CardsComponent implements OnInit{
         {
           this.thoughtToShare[this.j]=this.thought;
           this.j=this.j+1;
-         this.toShare=true;
+          this.deleteThought();
+         //this.toShare=true;
         }
         
       }
